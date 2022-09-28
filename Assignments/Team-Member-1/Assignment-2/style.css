@@ -1,0 +1,75 @@
+<html>
+<head>
+ 
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.topnav {
+  overflow: hidden;
+  background-color: #1E5162;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+
+.topnav-right {
+  float: right;
+}
+
+  .new-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("image.jpg");
+  width: 200%;
+  height:150%;
+  background-position: center;               
+  background-repeat: no-repeat;
+  background-size: 1914*822;
+  position: relative;
+
+}.new-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+}
+
+.new {
+  border: none;
+  color: white;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.LOGIN {background-color: #04AA6D;} /* Green */
+.LOGIN:hover {background-color: #46a049;}
+
+
+.warning {background-color: #ff9800;} /* Orange */
+.warning:hover {background: #e68a00;}
+
+ 
+
+
+
+</style>
+</head>
+</html>
