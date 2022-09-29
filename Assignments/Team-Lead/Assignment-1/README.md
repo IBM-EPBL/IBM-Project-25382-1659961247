@@ -1,3 +1,3 @@
-	#Resume Output#
-    
-    ![alt text](Resume.jpg)
+# Resume Output
+
+![alt text](Resume.jpg)
