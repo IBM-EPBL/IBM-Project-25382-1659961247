@@ -1,0 +1,47 @@
+{% extends 'index.html' %}
+
+<html>
+{% block head %}
+<head>
+    <link href="/static/style.css" rel="stylesheet" type="text/css">
+
+    <style>
+        body {
+            background-image: url(/static/CLOUD.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+    <title>Signin Page</title>
+
+</head>
+{% endblock %}
+
+{% block body %}
+<body>
+    <div class="topnav">
+        <a href="#home">Home</a>
+        <div class="topnav-right">
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+    <h1>Signin Page</h1>
+    
+    <form action="/login" method="POST">
+    
+        <label>Email</label><br>
+        <input type="email" name="email"><br><br>
+    
+        <label>Password</label><br>
+        <input type="password" name="password"><br><br>
+    
+        <input type="submit" class="btn btn-primary btn-lg">
+    </form>
+
+
+{% endblock %}
+
+</body>
+
+</html>

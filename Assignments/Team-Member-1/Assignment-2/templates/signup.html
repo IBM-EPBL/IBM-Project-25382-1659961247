@@ -1,0 +1,58 @@
+{% extends 'index.html' %}
+{% block head %}
+<HTML>
+
+<HEAD>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="/static/style.css" rel="stylesheet" type="text/css">
+</HEAD>
+
+</HTML>
+<style>
+  body {
+    background-image: url(/static/CLOUD.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+</style>
+{% endblock %}
+
+{% block body %}
+
+<body>
+
+  <div class="topnav">
+    <a href="#home">Home</a>
+    <div class="topnav-right">
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+
+  <h1>Signup Page</h1>
+
+  <form action="/signup" method="POST">
+
+    <label>Name</label><br>
+    <input type="text" name="name"><br><br>
+
+    <label>Email</label><br>
+    <input type="email" name="email"><br><br>
+
+    <label>Phone</label><br>
+    <input type="text" name="phone"><br><br>
+
+    <label>Password</label><br>
+    <input type="password" name="password"><br><br>
+
+    <label>Retype Password</label><br>
+    <input type="password" name="confirmPassword"><br><br>
+
+    <input type="submit" class="btn btn-primary btn-lg">
+  </form>
+
+  {% endblock %}
+</body>
+
+</html>

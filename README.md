@@ -1,5 +1,5 @@
 # IBM-Project-25382-1659961247
-**Inventory Managment System for Retailers**
+## Inventory Managment System for Retailers ##
 
 
 ***Team Members*** 
