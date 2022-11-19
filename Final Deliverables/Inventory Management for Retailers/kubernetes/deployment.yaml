@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: inventory-app
+spec:
+  selector:
+    matchLabels:
+      app: inventory-app
+  replicas: 5
+  template:
+    metadata:
+      labels:
+        app: inventory-app
+    spec:
+      containers:
+        - name: inventory-app
+          image: jp.icr.io/ramyanamespace/inventory-build 
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 5000
+              protocol : TCP
