@@ -1,0 +1,52 @@
+{% extends 'base2.html '%} {% block head %}
+<title>Orders</title>
+{% endblock%} {%block body%}
+<h2>Orders</h2>
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+</p>
+{% include 'table.html' %}
+<div class="forms-wrapper">
+  <form action="{{url_for('createOrder') }}" method="post">
+    <h3>Create Order</h3>
+    <div class="field">
+      <label class="custom-label" for="item">Enter Stock ID</label>
+      <input class="text-inputs" type="text" name="stock_id" placeholder="1" />
+    </div>
+    <div class="field">
+      <label class="custom-label" for="item">Enter Quantity</label>
+      <input class="text-inputs" type="number" name="quantity" placeholder="10" />
+    </div>
+    <button class="submit-button">Create</button>
+  </form>
+
+  <form action="{{url_for('updateOrder') }}" method="post">
+    <h3>Update Order</h3>
+    <div class="field">
+      <label class="custom-label" for="item">Enter Order ID</label>
+      <input class="text-inputs" name="item" type="number" placeholder="1" />
+    </div>
+    <div class="field">
+      <label for="custom-label" for="input-field">Choose a field - </label>
+      <select name="input-field" id="field">
+        <option value="STOCKS_ID">STOCKS_ID</option>
+        <option value="QUANTITY">QUANTITY</option>
+      </select>
+    </div>
+    <div class="field">
+      <label class="custom-label" for="input-value">Enter Value</label>
+      <input class="text-inputs" type="text" name="input-value" />
+    </div>
+    <button class="submit-button">Update</button>
+  </form>
+  <form action="{{url_for('cancelOrder') }}" method="post">
+    <h3>Cancel Order</h3>
+    <div class="field">
+      <label class="custom-label" for="item">Enter Order ID</label>
+      <input class="text-inputs" name="order_id" type="number" placeholder="1" />
+    </div>
+    <button class="submit-button red-button">Cancel</button>
+  </form>
+</div>
+{% endblock%}

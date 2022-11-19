@@ -1,0 +1,18 @@
+<div class="table-wrapper">
+  <table class="fl-table">
+    <thead>
+      {% for header in headings %}
+      <th>{{header}}</th>
+      {% endfor %}
+    </thead>
+    <tbody>
+      {% for row in data %}
+      <tr>
+        {% for cell in row %}
+        <td>{{row[cell]}}</td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
