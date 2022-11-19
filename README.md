@@ -7,5 +7,5 @@
 1. Team Lead - Ramya R
 2. Team Member 1 - Ramya M 
 3. Team Member 2  - Rithika L
-4. Team Member 3 - Rishitha Reddy 
+4. Team Member 3 - S.Sri Rishitha Reddy
  
