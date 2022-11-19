@@ -1,0 +1,74 @@
+{% extends 'base2.html '%} {% block head %}
+<title>Dashboard</title>
+{% endblock%} {%block body%}
+<h2>Everything you need to manage sales and donations</h2>
+<hr>
+<p>
+  Handle all your sales and purchases activities, manage invoice and bills, and track payments. Inventory management also
+  helps you to monitor packages and shipments to keeps your deliveries on time.
+  <br>
+  You can control your stocks in different warehouse or godowns centrally from inventory management. Track item movement,
+  transfer items within warehouse, and generate warehouse specific reports.
+</p>
+<hr>
+<p><h4>Stock Details</h4></p>
+{% include 'table.html' %}
+<div class="forms-wrapper">
+  <form action="{{url_for('UpdateStocks') }}" method="post">
+    <h3>Updating Stock</h3>
+    <div class="field">
+      <label class="custom-label" for="item"> Enter Item</label>
+      <input class="text-inputs" type="text" name="item" placeholder="milk" />
+    </div>
+    <div class="field">
+      <label for="input-field">Choose a field :</label>
+      <select name="input-field" id="field">
+        <option value="NAME">name</option>
+        <option value="PRICE_PER_QUANTITY">price</option>
+        <option value="QUANTITY">quantity</option>
+      </select>
+    </div>
+    <div class="field">
+      <label class="custom-label" for="input-value"> Enter Value</label>
+      <input
+        class="text-inputs"
+        type="text"
+        name="input-value"
+        placeholder=" "
+      />
+    </div>
+    <button class="submit-button">Update stock</button>
+  </form>
+
+  <form action="{{url_for('addStocks') }}" method="post">
+    <h3>Adding stocks</h3>
+    <div class="field">
+      <label class="custom-label" for="item"> Enter the item</label>
+      <input class="text-inputs" name="item" type="text" placeholder="juice" />
+    </div>
+    <div class="field">
+      <label class="custom-label" for="quantity"> Enter quantity</label>
+      <input
+        class="text-inputs"
+        type="number"
+        name="quantity"
+        placeholder="200"
+      />
+    </div>
+    <div class="field">
+      <label class="custom-label" for="price"> Enter price</label>
+      <input class="text-inputs" type="number" name="price" placeholder="25" />
+    </div>
+    <button class="submit-button">Add Stock</button>
+  </form>
+  <form action="{{url_for('deleteStocks') }}" method="post">
+    <h3>Removing stocks</h3>
+    <div class="field">
+      <label class="custom-label" for="item"> Enter the item</label>
+      <input class="text-inputs" name="item" type="text" placeholder="juice" />
+    </div>
+    <button class="submit-button red-button">Remove</button>
+  </form>
+</div>
+
+{% endblock%}

@@ -1,0 +1,51 @@
+{% extends 'base2.html '%} {% block head %}
+<title>Profile</title>
+{% endblock%} {%block body%}
+<h2>Profile</h2>
+<hr />
+<div class="user-deatils">
+  <h4><u>User Details</u></h4>
+  <br>
+  <h4>Username : {{data['USERNAME']}}</h4>
+  <h4>E-mail : {{data['EMAIL']}}</h3>
+</div>
+<hr>
+<div class="forms-wrapper mg-20 " >
+
+  <form action="{{url_for('updatePassword')}}" method="post">
+    <h3>Update Password</h3>
+    <div class="field">
+      <label class="custom-label" for="prev-password">
+        Enter Old Password</label>
+      <input
+        class="text-inputs"
+        type="password"
+        name="prev-password"
+        placeholder=" "
+      />
+    </div>
+    <div class="field">
+      <label class="custom-label" for="cur-password"> Enter New Password</label>
+      <input
+        class="text-inputs"
+        type="password"
+        name="cur-password"
+        placeholder=" "
+      />
+    </div>
+    <div class="field">
+      <label class="custom-label" for="confirm-password">
+        Enter Confirm Password</label
+      >
+      <input
+        class="text-inputs"
+        type="password"
+        name="confirm-password"
+        placeholder=" "
+      />
+    </div>
+
+    <button class="submit-button">Update</button>
+  </form>
+</div>
+{% endblock%}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      window.watsonAssistantChatOptions = {
+        integrationID: 'd1bdbacf-086b-48f6-b496-bf5724f077a2', // The ID of this integration.
+        region: 'jp-tok', // The region your integration is hosted in.
+        serviceInstanceID: '139e5af7-39ed-4937-bcc5-9d1420782c5c', // The ID of your service instance.
+        onLoad: function (instance) {
+          instance.render();
+        }
+      };
+      setTimeout(function () {
+        const t = document.createElement('script');
+        t.src =
+          'https://web-chat.global.assistant.watson.appdomain.cloud/versions/' + (window.watsonAssistantChatOptions.clientVersion || 'latest')+
+          '/WatsonAssistantChatEntry.js';
+          document.head.appendChild(t);
+      });
+    </script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="static/css/style.css" />
+    {% block head%}{% endblock %}
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- Sidebar  -->
+      <nav id="sidebar">
+        <div class="sidebar-header">
+          <h3>Inventory Management System for Retailers</h3>
+        </div>
+
+        <ul class="list-unstyled components">
+          <li>
+            <a href="/dashboard">Dashboard</a>
+          </li>
+          <li>
+            <a href="/orders">Orders</a>
+          </li>
+          <li>
+            <a href="/suppliers">Suppliers</a>
+          </li>
+          <li>
+            <a href="/profile">Profile</a>
+          </li>
+          <li>
+            <a href="/logout">logout</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Page Content  -->
+      <div id="content">{% block body %} {% endblock %}</div>
+    </div>
+
+    <script src="static/js/app.js"></script>
+  </body>
+</html>
