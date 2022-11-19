@@ -1,19 +1,16 @@
-/*
-    DEMO STYLE
-*/
 
-@import 'https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700';
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap');
 body {
-  font-family: 'Poppins', sans-serif;
-  background: #fafafa;
+  font-family: 'Merriweather Sans', sans-serif;
+  background: #eee0f6;
 }
 
 p {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Merriweather Sans', sans-serif;
   font-size: 1.1em;
-  font-weight: 300;
-  line-height: 1.7em;
-  color: #999;
+  font-weight: 400;
+  line-height: 1.8em;
+  color: rgb(104, 99, 99);
 }
 
 a,
@@ -70,7 +67,7 @@ a:focus {
 
 #sidebar .sidebar-header {
   padding: 20px;
-  background: #48494b;
+  background: #8c8e91;
 }
 
 #sidebar ul.components {
@@ -95,14 +92,14 @@ a:focus {
 }
 
 #sidebar ul li a:hover {
-  color: #7386d5;
+  color: #521998;
   background: #fff;
 }
 
 #sidebar ul li.active > a,
 a[aria-expanded='true'] {
   color: #fff;
-  background: #48494b;
+  background: #696a6e;
 }
 
 a[data-toggle='collapse'] {
@@ -164,7 +161,7 @@ a.article:hover {
 
 #content {
   width: 100%;
-  padding: 20px;
+  padding: 50px;
   min-height: 100vh;
   transition: all 0.3s;
 }
@@ -188,8 +185,8 @@ a.article:hover {
 /* Table Styles */
 
 .table-wrapper {
-  margin: 10px 70px 70px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  margin: 10px 80px 70px;
+  box-shadow: rgba(62, 3, 60, 0.2) 0px 2px 8px 0px;
 }
 
 .fl-table {
@@ -201,7 +198,7 @@ a.article:hover {
   width: 100%;
   max-width: 100%;
   white-space: nowrap;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
 }
 
 .fl-table td,
@@ -211,7 +208,7 @@ a.article:hover {
 }
 
 .fl-table td {
-  border-right: 1px solid #f8f8f8;
+  border-right: 1px solid #d4d2d2;
   font-size: 16px;
 }
 
@@ -256,7 +253,7 @@ a.article:hover {
 .submit-button {
   padding: 5px 10px;
   color: white;
-  background-color: rgb(41, 115, 41);
+  background-color: rgb(45, 7, 33);
   border: none;
   border-radius: 8px;
   min-width: 100px;
@@ -276,7 +273,7 @@ a.article:hover {
 } */
 .field {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   padding: 10px 0px;
 }
 .text-inputs {
@@ -358,5 +355,5 @@ a.article:hover {
 }
 
 .red-button {
-  background-color: rgb(186, 13, 13);
+  background-color: rgb(20, 18, 158);
 }
