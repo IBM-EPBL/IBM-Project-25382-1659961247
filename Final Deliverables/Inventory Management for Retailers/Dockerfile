@@ -1,7 +1,8 @@
-FROM python:3.9.7
+FROM python:3.10.7
 WORKDIR /app
-COPY requirements.txt ./
+COPY . /app
+COPY templates /app/
 RUN pip install -r requirements.txt
-COPY . .
 EXPOSE 5000
-CMD ["python","./app.py"]
+ENTRYPOINT [ "python" ]
+CMD ["app.py" ]

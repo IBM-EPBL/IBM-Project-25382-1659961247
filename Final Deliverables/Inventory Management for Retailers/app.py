@@ -29,7 +29,7 @@ def root():
     return render_template('login.html')
 
 
-@app.route('/user/<id>')
+@app.route('/user/<ID>')
 @login_required
 def user_info(id):
     with sql.connect('inventorymanagement1.db') as con:
@@ -62,7 +62,6 @@ def login():
             userid = account['EMAIL']
             session['username'] = account['USERNAME']
             msg = 'Logged in successfully !'
-            # return rewrite('/dashboard')
             return redirect(url_for('dashBoard'))
         else:
             msg = 'Incorrect username / password !'
@@ -129,16 +128,18 @@ def addStocks():
     if request.method == "POST":
         print(request.form['item'])
         try:
+            id1 = request.form['id1']
             item = request.form['item']
             quantity = request.form['quantity']
             price = request.form['price']
             total = int(price) * int(quantity)
-            insert_sql = 'INSERT INTO stocks (NAME,QUANTITY,PRICE_PER_QUANTITY,TOTAL_PRICE) VALUES (?,?,?,?)'
+            insert_sql = 'INSERT INTO stocks (ID1,NAME,QUANTITY,PRICE_PER_QUANTITY,TOTAL_PRICE) VALUES (?,?,?,?,?)'
             pstmt = ibm_db.prepare(conn, insert_sql)
-            ibm_db.bind_param(pstmt, 1, item)
-            ibm_db.bind_param(pstmt, 2, quantity)
-            ibm_db.bind_param(pstmt, 3, price)
-            ibm_db.bind_param(pstmt, 4, total)
+            ibm_db.bind_param(pstmt, 1, id1)
+            ibm_db.bind_param(pstmt, 2, item)
+            ibm_db.bind_param(pstmt, 3, quantity)
+            ibm_db.bind_param(pstmt, 4, price)
+            ibm_db.bind_param(pstmt, 5, total)
             ibm_db.execute(pstmt)
 
         except Exception as e:
@@ -262,7 +263,7 @@ def orders():
     stmt = ibm_db.exec_immediate(conn, query)
     dictionary = ibm_db.fetch_assoc(stmt)
     orders = []
-    headings = [dictionary]
+    headings = [*dictionary]
     while dictionary != False:
         orders.append(dictionary)
         dictionary = ibm_db.fetch_assoc(stmt)
@@ -275,7 +276,7 @@ def createOrder():
     if request.method == "POST":
         try:
             stock_id = request.form['stock_id']
-            query = 'SELECT PRICE_PER_QUANTITY FROM stocks WHERE name = ?'
+            query = 'SELECT PRICE_PER_QUANTITY FROM stocks WHERE ID1= ?'
             stmt = ibm_db.prepare(conn, query)
             ibm_db.bind_param(stmt, 1, stock_id)
             ibm_db.execute(stmt)
@@ -285,8 +286,8 @@ def createOrder():
                 date = str(datetime.now().year) + "-" + str(datetime.now().month) + "-" + str(datetime.now().day)
                 delivery = datetime.now() + timedelta(days=7)
                 delivery_date = str(delivery.year) + "-" + str(delivery.month) + "-" + str(delivery.day)
-                price = float(quantity) *  float(dictionary['PRICE_PER_QUANTITY'])
-                query = 'INSERT INTO orders (STOCKS_ID,QUANTITY,DATE,DELIVERY_DATE,PRICE) VALUES (?,?,?,?,?)'
+                price = int(quantity) * int(dictionary['PRICE_PER_QUANTITY'])
+                query = 'INSERT INTO orders (STOCKS_ID,QUANTITY,DATE,DELIVERY_DATE,TOTAL_PRICE) VALUES (?,?,?,?,?)'
                 pstmt = ibm_db.prepare(conn, query)
                 ibm_db.bind_param(pstmt, 1, stock_id)
                 ibm_db.bind_param(pstmt, 2, quantity)
@@ -327,7 +328,7 @@ def cancelOrder():
     if request.method == "POST":
         try:
             order_id = request.form['order_id']
-            query = 'DELETE FROM orders WHERE ID=?'
+            query = 'DELETE FROM orders WHERE STOCKS_ID=?'
             pstmt = ibm_db.prepare(conn, query)
             ibm_db.bind_param(pstmt, 1, order_id)
             ibm_db.execute(pstmt)
@@ -358,7 +359,7 @@ def suppliers():
     dictionary = ibm_db.fetch_assoc(stmt)
     order_ids = []
     while dictionary != False:
-        order_ids.append(dictionary['ID'])
+        order_ids.append(dictionary['STOCKS_ID'])
         dictionary = ibm_db.fetch_assoc(stmt)
 
     unassigned_order_ids = set(order_ids) - set(orders_assigned)

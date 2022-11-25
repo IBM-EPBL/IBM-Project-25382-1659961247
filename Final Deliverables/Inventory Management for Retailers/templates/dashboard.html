@@ -1,7 +1,7 @@
 {% extends 'base2.html '%} {% block head %}
 <title>Dashboard</title>
 {% endblock%} {%block body%}
-<h2>Everything you need to manage sales and donations</h2>
+<h2>Everything You Need to Manage Sales and Donations</h2>
 <hr>
 <p>
   Handle all your sales and purchases activities, manage invoice and bills, and track payments. Inventory management also
@@ -11,7 +11,8 @@
   transfer items within warehouse, and generate warehouse specific reports.
 </p>
 <hr>
-<p><h4>Stock Details</h4></p>
+<p><h4><u>Stock Details</u></h4></p>
+<br>
 {% include 'table.html' %}
 <div class="forms-wrapper">
   <form action="{{url_for('UpdateStocks') }}" method="post">
@@ -42,6 +43,10 @@
 
   <form action="{{url_for('addStocks') }}" method="post">
     <h3>Adding stocks</h3>
+    <div class="field">
+      <label class="custom-label" for="id1"> Enter item ID</label>
+      <input class="text-inputs" name="id1" type="text" placeholder="1" />
+    </div>
     <div class="field">
       <label class="custom-label" for="item"> Enter the item</label>
       <input class="text-inputs" name="item" type="text" placeholder="juice" />

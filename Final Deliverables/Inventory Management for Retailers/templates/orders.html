@@ -10,7 +10,7 @@ This includes product picking and batch picking, sorting, packing, tracking, and
 {% include 'table.html' %}
 <div class="forms-wrapper">
   <form action="{{url_for('createOrder') }}" method="post">
-    <h3>Create Order</h3>
+    <h3>Create an Order</h3>
     <div class="field">
       <label class="custom-label" for="item">Enter Stock ID</label>
       <input class="text-inputs" type="text" name="stock_id" placeholder="1" />
@@ -27,7 +27,7 @@ This includes product picking and batch picking, sorting, packing, tracking, and
     <button class="submit-button">Create</button>
   </form>
   <form action="{{url_for('updateOrder') }}" method="post">
-    <h3>Update Order</h3>
+    <h3>Update the Order</h3>
     <div class="field">
       <label class="custom-label" for="item">Enter Order ID</label>
       <input class="text-inputs" name="item" type="number" placeholder="1" />
@@ -35,7 +35,7 @@ This includes product picking and batch picking, sorting, packing, tracking, and
     <div class="field">
       <label for="custom-label" for="input-field">Choose a field : </label>
       <select name="input-field" id="field">
-        <option value="STOCKS_ID">stocks</option>
+        <option value="STOCK_NAME">stocks</option>
         <option value="QUANTITY">Quantity</option>
       </select>
     </div>

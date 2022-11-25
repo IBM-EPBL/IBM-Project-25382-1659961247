@@ -1,16 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap');
 body {
-  font-family: 'Merriweather Sans', sans-serif;
-  background: #eee0f6;
+  font-family: 'Roboto', sans-serif;
+  background: #fbf6ff;
 }
 
 p {
-  font-family: 'Merriweather Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1.1em;
   font-weight: 400;
   line-height: 1.8em;
-  color: rgb(104, 99, 99);
+  color: rgb(7, 6, 6);
 }
 
 a,
@@ -56,7 +56,7 @@ a:focus {
 #sidebar {
   min-width: 250px;
   max-width: 250px;
-  background: #48494b;
+  background: #ced0d2;
   color: #fff;
   transition: all 0.3s;
 }
@@ -67,12 +67,13 @@ a:focus {
 
 #sidebar .sidebar-header {
   padding: 20px;
-  background: #8c8e91;
+  background: #979597;
 }
 
 #sidebar ul.components {
   padding: 20px 0;
-  border-bottom: 1px solid #47748b;
+  color: black;
+  /* border-bottom: 1px solid #47748b; */
 }
 
 #sidebar ul p {
@@ -152,7 +153,7 @@ a.article:hover {
   padding-left: 20px;
 }
 .login-card a {
-  color: rgba(46, 13, 97, 0.888);
+  color: rgba(137, 53, 164, 0.888);
 }
 
 /* ---------------------------------------------------
@@ -198,7 +199,7 @@ a.article:hover {
   width: 100%;
   max-width: 100%;
   white-space: nowrap;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(255, 228, 228);
 }
 
 .fl-table td,
@@ -214,12 +215,13 @@ a.article:hover {
 
 .fl-table thead th {
   color: #ffffff;
-  background: #68716e !important ;
+  background: #24022d !important ;
 }
+/* 68716e */
 
 .fl-table thead:nth-child(odd) {
   color: #ffffff;
-  background: #324960;
+  /* background: #324960; */
 }
 
 .fl-table tr:nth-child(even) {
@@ -232,7 +234,7 @@ a.article:hover {
 .field input[type='text'] {
   /* width: 100%; */
   border: 2px solid #aaa;
-  border-radius: 4px;
+  border-radius: 5px;
   /* margin: 8px 0; */
   outline: none;
   padding: 2px 10px;
@@ -242,7 +244,7 @@ a.article:hover {
 .field input[type='number'] {
   /* width: 100%; */
   border: 2px solid #aaa;
-  border-radius: 4px;
+  border-radius: 5px;
   /* margin: 8px 0; */
   outline: none;
   padding: 2px 10px;
@@ -255,7 +257,7 @@ a.article:hover {
   color: white;
   background-color: rgb(45, 7, 33);
   border: none;
-  border-radius: 8px;
+  border-radius: 5px;
   min-width: 100px;
 }
 .submit-button a {
@@ -355,5 +357,5 @@ a.article:hover {
 }
 
 .red-button {
-  background-color: rgb(20, 18, 158);
+  background-color: rgb(199, 15, 15);
 }
