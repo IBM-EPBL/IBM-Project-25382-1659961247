@@ -2,5 +2,5 @@
 ## Inventory Managment System for Retailers ##
 
 
- Click here for [Demo Video Link](https://drive.google.com/file/d/1bCtPL3bvUDbZE-BMEpwxSwOHsgUCGeAO/view?usp=sharing)
+ Click here for [Demo Video Link](https://drive.google.com/file/d/1e8z8_K5ugTgFI-kqwENSXrEJ0WrgLtf3/view?usp=sharing)
  
